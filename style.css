@@ -1,173 +1,228 @@
-/* --- GLOBAL --- */
+/* RESET */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
-  background: hsl(39, 58%, 42%);
-  color: #ffffff;
+  background: #f5f3ef; /* soft beige luxury */
+  color: #1a1a1a;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* --- TYPOGRAPHY --- */
-h1 {
+/* TYPOGRAPHY */
+h1, h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 50px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 600;
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-style: italic;
-  margin-bottom: 5px;
+  font-size: 36px;
+  margin-bottom: 15px;
 }
 
 p {
-  font-size: 12px;
-  color: #cccccc;
+  font-size: 16px;
+  color: #555;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('assets/hero.webp') center/cover no-repeat;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* overlay luxury */
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hero h1 {
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #ddd;
   margin-bottom: 20px;
 }
 
-/* --- HERO SECTION --- */
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* BUTTON */
+button {
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #d4af37, #f2d27a);
+  border: none;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.hero img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.overlay {
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  width: 100%;
-}
-
-/* --- SECTION GLOBAL --- */
+/* SECTION */
 .section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.dark {
-  background: #cc8d05;
-}
-
-.container-text {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* --- IMAGE SECTION (FLEX) --- */
+/* IMAGE SECTION */
 .image-section {
   display: flex;
   align-items: center;
-  gap: 50px;
-  padding: 60px 10%;
+  gap: 40px;
+  padding: 80px 10%;
 }
 
 .image-section img {
   width: 50%;
-  border-radius: 4px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .image-section .text {
   width: 50%;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.image-section .text h2 {
+  margin-bottom: 15px;
+}
+
+.image-section .text p {
+  max-width: 400px;
+}
+
+/* REVERSE */
 .reverse {
   flex-direction: row-reverse;
 }
 
-/* --- FULL IMAGE --- */
+/* FULL IMAGE */
 .full-img {
   width: 100%;
-  max-width: 1000px;
-  display: block;
-  margin: 20px auto;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-/* --- BUTTON & CTA --- */
+/* DARK SECTION */
+.dark {
+  background: #eae3d2;
+}
+
+/* CTA */
 .cta {
   padding: 100px 20px;
   text-align: center;
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+  color: white;
 }
 
-button {
-  padding: 14px 28px;
-  background: linear-gradient(45deg, #c9a96e, #e6c07b);
-  border: none;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  transition: 0.3s ease;
+.cta h2 {
+  margin-bottom: 20px;
 }
 
-button:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* --- WA FLOAT --- */
+/* WHATSAPP FLOAT */
 .wa {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   background: #25D366;
-  width: 60px;
-  height: 60px;
+  padding: 16px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
+  font-size: 20px;
+  color: white;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* --- MOBILE OPTIMIZATION (CENTER & TIGHT) --- */
+/* NAVBAR (OPTIONAL LUXURY) */
+header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+}
+
+header .logo {
+  font-family: 'Playfair Display';
+  font-size: 22px;
+}
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-  h1 { font-size: 30px; }
-  h2 { font-size: 24px; }
-  
-  .hero { height: 80vh; }
 
-  /* Merapatkan jarak antar section di mobile */
-  .section {
-      padding: 40px 20px; 
+  h1 {
+    font-size: 32px;
   }
 
-  /* Memaksa gambar dan teks bertumpuk ke bawah */
-  .image-section, .image-section.reverse {
-      flex-direction: column;
-      padding: 30px 20px;
-      gap: 15px; /* Jarak rapat antara gambar dan teks */
+  h2 {
+    font-size: 24px;
   }
 
-  .image-section img, 
+  p {
+    font-size: 14px;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .image-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .image-section img,
   .image-section .text {
-      width: 100%;
-      text-align: center; /* Teks Center di mobile */
+    width: 100%;
+    text-align: center;
   }
 
-  .full-img {
-      margin-top: 10px;
+  .image-section .text p {
+    max-width: 100%;
   }
+
+  .section {
+    padding: 60px 20px;
+  }
+
 }
