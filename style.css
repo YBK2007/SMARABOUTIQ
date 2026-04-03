@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
+  background: hsl(39, 58%, 42%);
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
@@ -22,13 +22,13 @@ h1 {
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 20px;
   font-style: italic;
   margin-bottom: 15px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 12px;
   color: #cccccc;
   margin-bottom: 20px;
 }
