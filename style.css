@@ -1,0 +1,173 @@
+/* --- GLOBAL --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+/* --- SECTION GLOBAL --- */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.dark {
+  background: #111111;
+}
+
+.container-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- IMAGE SECTION (FLEX) --- */
+.image-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 10%;
+}
+
+.image-section img {
+  width: 50%;
+  border-radius: 4px;
+}
+
+.image-section .text {
+  width: 50%;
+  text-align: left;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* --- FULL IMAGE --- */
+.full-img {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* --- BUTTON & CTA --- */
+.cta {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+button {
+  padding: 14px 28px;
+  background: linear-gradient(45deg, #c9a96e, #e6c07b);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* --- WA FLOAT --- */
+.wa {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+/* --- MOBILE OPTIMIZATION (CENTER & TIGHT) --- */
+@media (max-width: 768px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 24px; }
+  
+  .hero { height: 80vh; }
+
+  /* Merapatkan jarak antar section di mobile */
+  .section {
+      padding: 40px 20px; 
+  }
+
+  /* Memaksa gambar dan teks bertumpuk ke bawah */
+  .image-section, .image-section.reverse {
+      flex-direction: column;
+      padding: 30px 20px;
+      gap: 15px; /* Jarak rapat antara gambar dan teks */
+  }
+
+  .image-section img, 
+  .image-section .text {
+      width: 100%;
+      text-align: center; /* Teks Center di mobile */
+  }
+
+  .full-img {
+      margin-top: 10px;
+  }
+}
