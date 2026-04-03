@@ -134,7 +134,8 @@ button:hover {
 
 /* DARK SECTION */
 .dark {
-  background: #eae3d2;
+  background: #f5f3ef;   /* beige luxury */
+  color: #1a1a1a;
 }
 
 /* CTA */
